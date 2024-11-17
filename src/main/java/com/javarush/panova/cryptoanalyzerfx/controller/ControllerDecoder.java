@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.List;
 
 public class ControllerDecoder {
-    private Decoder decoder;
+    private final Decoder decoder;
 
 
     public ControllerDecoder(Decoder decoder) {

@@ -13,6 +13,9 @@ import java.util.List;
 public class FileManager {
     private static final StandardOpenOption[] FILE_OPTIONS = {StandardOpenOption.CREATE, StandardOpenOption.APPEND};
 
+    private FileManager(){
+
+    }
 
     public static List<String> readFile(File filePath) throws FileManagerException {
         List<String> list = new ArrayList<>();

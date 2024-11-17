@@ -27,7 +27,7 @@ public class Validator {
     }
 
 
-    public static boolean isFileForWriting(File filePath) throws FileManagerException {
+    public static void isFileForWriting(File filePath) throws FileManagerException {
         Path path = filePath.toPath();
         if(!Files.exists(path)){
             throw new FileManagerException("The file " + filePath + " does not exist");
@@ -38,10 +38,10 @@ public class Validator {
         if(!Files.isWritable(path)){
             throw new FileManagerException("The specified file is closed for writing");
         }
-        return true;
+
     }
 
-    public static boolean isFileForReading(File filePath) throws FileManagerException {
+    public static void isFileForReading(File filePath) throws FileManagerException {
         Path path = filePath.toPath();
         if(!Files.exists(path)){
             throw new FileManagerException("The file " + filePath + " does not exist");
@@ -52,7 +52,7 @@ public class Validator {
         if(!Files.isReadable(path)){
             throw new FileManagerException("The specified file is closed for reading");
         }
-        return true;
+
     }
 
 }

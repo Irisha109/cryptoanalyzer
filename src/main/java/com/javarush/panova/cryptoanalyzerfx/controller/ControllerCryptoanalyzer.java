@@ -28,6 +28,7 @@ public class ControllerCryptoanalyzer {
     private File decryptFileBruteForce;
     private BruteForceDecrypt bruteForceDecrypt = new BruteForceDecrypt(alphabetRu);
     private ControllerDecoder controllerDecoderBruteForce = new ControllerDecoder(bruteForceDecrypt);
+
     //------------------------ENCRYPT CAESAR------OK-------------------------------------------
 
     @FXML
@@ -79,6 +80,7 @@ public class ControllerCryptoanalyzer {
 
     @FXML
     private Label resultFileExceptionEncrypt;
+
 //---------------------------DECRYPT CAESAR---------OK---------------------------------------
 
     @FXML
@@ -140,10 +142,6 @@ public class ControllerCryptoanalyzer {
         }
     }
 
-//    @FXML
-//    protected TextField keyBruteForceField;
-
-
     @FXML
     protected void onChooseDecryptFileBruteForceButtonClick() {
         decryptFileBruteForce = fileChooser.showOpenDialog(null);
@@ -168,9 +166,6 @@ public class ControllerCryptoanalyzer {
 
     @FXML
     private Label encryptFileExceptionBruteForce;
-
-//    @FXML
-//    private Label keyExceptionBruteForce;
 
     @FXML
     private Label resultFileExceptionBruteForce;
