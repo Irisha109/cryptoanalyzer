@@ -1,7 +1,6 @@
 package com.javarush.panova.cryptoanalyzerfx.utilities;
 
-import com.javarush.panova.cryptoanalyzerfx.dao.Alphabet;
-import com.javarush.panova.cryptoanalyzerfx.dao.AlphabetRu;
+import com.javarush.panova.cryptoanalyzerfx.language.AlphabetRu;
 
 import java.io.File;
 import java.nio.file.Files;

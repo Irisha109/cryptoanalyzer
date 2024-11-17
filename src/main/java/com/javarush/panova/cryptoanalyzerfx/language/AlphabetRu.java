@@ -1,4 +1,4 @@
-package com.javarush.panova.cryptoanalyzerfx.dao;
+package com.javarush.panova.cryptoanalyzerfx.language;
 
 public class AlphabetRu implements Alphabet{
 

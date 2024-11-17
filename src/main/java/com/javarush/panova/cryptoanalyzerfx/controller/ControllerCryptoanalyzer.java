@@ -1,9 +1,9 @@
 package com.javarush.panova.cryptoanalyzerfx.controller;
 
-import com.javarush.panova.cryptoanalyzerfx.dao.AlphabetRu;
+import com.javarush.panova.cryptoanalyzerfx.language.AlphabetRu;
 import com.javarush.panova.cryptoanalyzerfx.services.BruteForceDecrypt;
 import com.javarush.panova.cryptoanalyzerfx.services.CaesarCipherDecrypt;
-import com.javarush.panova.cryptoanalyzerfx.services.Encoder;
+import com.javarush.panova.cryptoanalyzerfx.services.Encrypt;
 import com.javarush.panova.cryptoanalyzerfx.utilities.FileManagerException;
 import com.javarush.panova.cryptoanalyzerfx.utilities.Validator;
 import javafx.fxml.FXML;
@@ -12,17 +12,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
-public class CryptoanalyzerController {
+public class ControllerCryptoanalyzer {
     private File originalFile;
     private File encryptFile;
     private FileChooser fileChooser = new FileChooser();
     private AlphabetRu alphabetRu = new AlphabetRu();
-    private Encoder encoder = new Encoder(alphabetRu);
-    private ControllerEncoder controllerEncoder = new ControllerEncoder(encoder);
+    private Encrypt encrypt = new Encrypt(alphabetRu);
+    private ControllerEncoder controllerEncoder = new ControllerEncoder(encrypt);
     private CaesarCipherDecrypt caesarCipherDecrypt = new CaesarCipherDecrypt(alphabetRu);
     private ControllerDecoder controllerDecoder = new ControllerDecoder(caesarCipherDecrypt);
     private File encryptFileCaesar;

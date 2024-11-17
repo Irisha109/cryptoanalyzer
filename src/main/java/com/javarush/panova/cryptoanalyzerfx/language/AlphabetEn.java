@@ -1,4 +1,4 @@
-package com.javarush.panova.cryptoanalyzerfx.dao;
+package com.javarush.panova.cryptoanalyzerfx.language;
 
 public class AlphabetEn implements Alphabet{
     private final Character[] ALPHABET_EN = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',

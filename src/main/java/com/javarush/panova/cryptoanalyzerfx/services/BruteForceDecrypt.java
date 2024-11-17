@@ -1,13 +1,13 @@
 package com.javarush.panova.cryptoanalyzerfx.services;
 
-import com.javarush.panova.cryptoanalyzerfx.dao.Alphabet;
+import com.javarush.panova.cryptoanalyzerfx.language.Alphabet;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class BruteForceDecrypt implements Decoder {
-    private Character[] arrayAlphabet;
+    private final Character[] arrayAlphabet;
 
     private final CaesarCipherDecrypt cipherDecrypt;
 
@@ -16,10 +16,6 @@ public class BruteForceDecrypt implements Decoder {
         this.arrayAlphabet = alphabet.getAlphabet();
         this.cipherDecrypt = new CaesarCipherDecrypt(alphabet);
 
-    }
-
-    public void setValueAlphabet(Character[] valueAlphabet) {
-        this.arrayAlphabet = valueAlphabet;
     }
 
     @Override
@@ -36,18 +32,18 @@ public class BruteForceDecrypt implements Decoder {
     private boolean isCorrectDecoding(String string){
         Map<Character, Integer> map = new HashMap<>();
         char[] characters = string.toCharArray();
-        for (int i = 0; i < characters.length; i++) {
-            map.put(characters[i], map.getOrDefault(characters[i], 0) + 1);
+        for (char character : characters) {
+            map.put(character, map.getOrDefault(character, 0) + 1);
         }
-        int count_a = map.containsKey('а') ? map.get('а') : 0;
-        int count_A = map.containsKey('А') ? map.get('А') : 0;
-        int count_o = map.containsKey('о') ? map.get('о') : 0;
-        int count_O = map.containsKey('О') ? map.get('О') : 0;
-        int count_i = map.containsKey('и') ? map.get('и') : 0;
-        int count_I = map.containsKey('И') ? map.get('И') : 0;
-        int count_e = map.containsKey('е') ? map.get('е') : 0;
-        int count_E = map.containsKey('Е') ? map.get('Е') : 0;
-        int count_space = map.containsKey(' ') ? map.get(' ') : 0;
+        int count_a = map.getOrDefault('а', 0);
+        int count_A = map.getOrDefault('А', 0);
+        int count_o = map.getOrDefault('о', 0);
+        int count_O = map.getOrDefault('О', 0);
+        int count_i = map.getOrDefault('и', 0);
+        int count_I = map.getOrDefault('И', 0);
+        int count_e = map.getOrDefault('е', 0);
+        int count_E = map.getOrDefault('Е', 0);
+        int count_space = map.getOrDefault(' ', 0);
 
 
         int mostCommonChar = count_a + count_A + count_o + count_O

@@ -1,10 +1,8 @@
 package com.javarush.panova.cryptoanalyzerfx.controller;
 
-import com.javarush.panova.cryptoanalyzerfx.dao.Alphabet;
 import com.javarush.panova.cryptoanalyzerfx.services.Decoder;
 import com.javarush.panova.cryptoanalyzerfx.utilities.FileManager;
 import com.javarush.panova.cryptoanalyzerfx.utilities.FileManagerException;
-import com.javarush.panova.cryptoanalyzerfx.utilities.Validator;
 
 import java.io.File;
 import java.util.List;
